@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body>
+<pre id="result">Loading...</pre>
+<script>
+const TOKEN = 'PASTE_YOUR_NOTION_TOKEN_HERE'; // не коммить реальный токен; возьми из .env (MCP_MCPMARKET_API_KEY)
+const DATA_SOURCE_ID = '1bd3fa40-27f0-4fc7-96b0-f7d6083ce7f0';
+const API_BASE = 'https://link.mcpmarket.com/sfwefr/notion/mcp';
+
+async function queryNotion() {
+  const body = {
+    jsonrpc: '2.0',
+    id: 1,
+    method: 'tools/call',
+    params: {
+      name: 'notion_query',
+      arguments: {
+        data_source_id: DATA_SOURCE_ID,
+        filter: {
+          and: [
+            {
+              or: [
+                { property: 'Статус', select: { equals: 'Подтверждён' } },
+                { property: 'Статус', select: { equals: 'Ожидает' } }
+              ]
+            },
+            { property: 'Дата', date: { equals: '2026-06-11' } }
+          ]
+        }
+      }
+    }
+  };
+
+  try {
+    const resp = await fetch(API_BASE, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + TOKEN,
+        'Accept': 'application/json, text/event-stream',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    const text = await resp.text();
+    document.getElementById('result').textContent = text;
+  } catch(e) {
+    document.getElementById('result').textContent = 'Error: ' + e.message;
+  }
+}
+
+queryNotion();
+</script>
+</body>
+</html>

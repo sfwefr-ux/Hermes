@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "installed": {
+    "firecrawl-build-onboarding": {
+      "source": "clawhub",
+      "identifier": "firecrawl-build-onboarding",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:1d847932c7fb56ea",
+      "install_path": "firecrawl-build-onboarding",
+      "files": [
+        "references/auth-flow.md",
+        "references/project-setup.md",
+        "references/sdk-installation.md",
+        "skill-card.md",
+        "SKILL.md",
+        "_meta.json"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-11T18:27:39.101574+00:00",
+      "updated_at": "2026-06-11T18:27:39.101590+00:00"
+    },
+    "firecrawl-build-scrape": {
+      "source": "clawhub",
+      "identifier": "firecrawl-build-scrape",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:c33e3b853f9078cd",
+      "install_path": "firecrawl-build-scrape",
+      "files": [
+        "skill-card.md",
+        "SKILL.md",
+        "_meta.json"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-11T18:29:53.770140+00:00",
+      "updated_at": "2026-06-11T18:29:53.770148+00:00"
+    },
+    "firecrawl-build-search": {
+      "source": "clawhub",
+      "identifier": "firecrawl-build-search",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:458714a75b0e1bc8",
+      "install_path": "firecrawl-build-search",
+      "files": [
+        "skill-card.md",
+        "SKILL.md",
+        "_meta.json"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-11T18:30:52.734494+00:00",
+      "updated_at": "2026-06-11T18:30:52.734506+00:00"
+    },
+    "firecrawl-build-interact": {
+      "source": "clawhub",
+      "identifier": "firecrawl-build-interact",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:1f3f7b5b5bfefa11",
+      "install_path": "firecrawl-build-interact",
+      "files": [
+        "skill-card.md",
+        "SKILL.md",
+        "_meta.json"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-11T18:31:56.978922+00:00",
+      "updated_at": "2026-06-11T18:31:56.978928+00:00"
+    }
+  }
+}
