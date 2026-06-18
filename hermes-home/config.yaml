@@ -1,7 +1,7 @@
 model:
-  provider: deepseek
-  default: deepseek-v4-pro
-  base_url: https://api.deepseek.com/v1
+  provider: openrouter
+  default: anthropic/claude-sonnet-4.6
+  base_url: https://openrouter.ai/api/v1
 providers: {}
 fallback_providers:
 - provider: openrouter
@@ -321,9 +321,9 @@ memory:
   user_char_limit: 1375
   provider: ''
 delegation:
-  model: deepseek-v4-pro
-  provider: deepseek
-  base_url: https://api.deepseek.com/v1
+  model: anthropic/claude-opus-4.8
+  provider: openrouter
+  base_url: https://openrouter.ai/api/v1
   api_key: ''
   api_mode: ''
   inherit_mcp_toolsets: true
@@ -413,7 +413,10 @@ command_allowlist:
 - script execution via -e/-c flag
 - execute_code
 quick_commands: {}
-hooks: {}
+hooks:
+  pre_llm_call:
+  - command: '"C:/Users/1/Desktop/Hermes agent/.venv/Scripts/python.exe" C:/Users/1/AppData/Local/hermes/hooks/llm_router.py'
+    timeout: 15
 hooks_auto_accept: false
 personalities: {}
 security:
