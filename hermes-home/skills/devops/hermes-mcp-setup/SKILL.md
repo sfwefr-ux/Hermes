@@ -278,6 +278,55 @@ Config changes require restart:
 
 - **Cron + Notion DB → Telegram reminders**: daily schedule overviews from a Notion database, delivered automatically. Full recipe in [`references/cron-notion-reminder-pattern.md`](references/cron-notion-reminder-pattern.md).
 
+## OAuth-Only Services → Community Stdio Fallback
+
+Some official MCP servers (e.g. Vercel at `https://mcp.vercel.com`) use strict OAuth 2.0 with a **closed client whitelist** — only pre-approved AI clients (Claude Code, Cursor, Copilot, etc.) can connect. Hermes gets HTTP 401 even with a valid API token, because the server only accepts OAuth tokens from registered clients.
+
+### The pattern
+
+When you hit a 401 from an official endpoint and the `WWW-Authenticate` header confirms OAuth with no API-token fallback:
+
+1. **Don't fight OAuth** — if Hermes isn't on the approved list, stop after 1-2 auth attempts
+2. **Search npm** for community stdio packages: `npm search <service> mcp --json`
+3. **Filter by recency/activity** — prefer packages updated in the last 6 months
+4. **Verify with raw initialize** — send JSON-RPC `initialize` via subprocess before touching config
+5. **Configure as stdio** with `${ENV_VAR}` references, not inline secrets
+
+### Verification before config
+
+```python
+import subprocess, json
+init = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "initialize",
+    "params": {"protocolVersion": "2024-11-05", "capabilities": {},
+    "clientInfo": {"name": "test", "version": "1.0"}}}) + '\n'
+r = subprocess.run(['npx', '-y', '@scope/package'], input=init,
+    capture_output=True, text=True, timeout=30,
+    env={**os.environ, 'SERVICE_TOKEN': 'test'})
+# Look for "result":{"serverInfo":{...}} in stdout
+```
+
+### Config example (stdio + env var)
+
+```yaml
+mcp_servers:
+  service_name:
+    type: stdio
+    command: npx
+    args: ['-y', '@scope/package-name']
+    env:
+      SERVICE_TOKEN: '${SERVICE_TOKEN}'
+```
+
+Token goes in `.env` as `SERVICE_TOKEN=<value>`, never inline in config.
+
+### Known community packages
+
+| Service | Package | Env var | Tools |
+|---------|---------|---------|-------|
+| Vercel | `@robinson_ai_systems/vercel-mcp` | `VERCEL_TOKEN` | 50+ (deployments, projects, domains, env vars, teams) |
+
+See [`references/vercel-mcp.md`](references/vercel-mcp.md) for full Vercel MCP details.
+
 ## Service-Specific Notes
 
 - **Notion MCP**: full verification results, tool list, and Cyrillic comparison with Miro in [`references/notion-mcp-verification.md`](references/notion-mcp-verification.md).

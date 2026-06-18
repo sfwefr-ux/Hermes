@@ -20,6 +20,7 @@
 cron/output/
 cron/*.bak*
 **/*.lock
+skills/.curator_backups/
 
 # Подстраховка: даже если что-то выше разрешили — секреты и БД никогда не коммитим:
 .env

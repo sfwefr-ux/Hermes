@@ -1,9 +1,9 @@
 {
-  "last_report_path": null,
-  "last_run_at": "2026-06-09T15:43:23.950327+00:00",
-  "last_run_duration_seconds": null,
-  "last_run_summary": "deferred first run — curator seeded, will run after one interval; use `hermes curator run --dry-run` to preview now",
+  "last_report_path": "C:\\Users\\1\\AppData\\Local\\hermes\\logs\\curator\\20260618-151913",
+  "last_run_at": "2026-06-18T15:19:13.841635+00:00",
+  "last_run_duration_seconds": 424.542948,
+  "last_run_summary": "auto: no changes; llm: ---\n\n## Consolidation Pass Summary\n\n**5 umbrella actions → 10 skills archived. 10 candidate clusters examined, 5 acted on.**\n\n### Processed clusters\n\n**1. GitHub (5 → 1 umbrella `github`)** — All five subdomains (auth, PR workflow, code rev…\narchived 10 skill(s):\n  • badlock-business → badlock\n  • nano-pdf → ocr-and-documents\n  • notion-business-ops → notion\n  • github-auth — pruned (stale)\n  • github-code-review — pruned (stale)\n  • github-issues — pruned (stale)\n  • github-pr-workflow — pruned (stale)\n  • github-repo-management — pruned (stale)\n  • kanban-orchestrator — pruned (stale)\n  • kanban-worker — pruned (stale)\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin badlock",
   "last_run_summary_shown_at": null,
   "paused": false,
-  "run_count": 0
+  "run_count": 1
 }

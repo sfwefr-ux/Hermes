@@ -27,7 +27,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-09T23:38:26.629446+03:00",
-      "next_run_at": "2026-06-13T08:00:00+03:00",
+      "next_run_at": "2026-06-19T08:00:00+03:00",
       "last_run_at": null,
       "last_status": null,
       "last_error": null,
@@ -65,15 +65,15 @@
       "schedule_display": "0 23 * * *",
       "repeat": {
         "times": null,
-        "completed": 2
+        "completed": 5
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-10T00:25:57.753004+03:00",
-      "next_run_at": "2026-06-12T23:00:00+03:00",
-      "last_run_at": "2026-06-11T23:02:22.004621+03:00",
+      "next_run_at": "2026-06-18T23:00:00+03:00",
+      "last_run_at": "2026-06-15T23:02:26.017498+03:00",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -139,7 +139,45 @@
       ],
       "workdir": null,
       "profile": null
+    },
+    {
+      "id": "52f4c8fac5d2",
+      "name": "MCP-\u043c\u0430\u0440\u043a\u0435\u0442\u044b: watchdog",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "mcp_market_watchdog.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/10 * * * *",
+        "display": "*/10 * * * *"
+      },
+      "schedule_display": "*/10 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 87
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-13T22:23:32.062448+03:00",
+      "next_run_at": "2026-06-18T20:50:00+03:00",
+      "last_run_at": "2026-06-18T20:40:31.683116+03:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram:6199615746",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null,
+      "profile": null
     }
   ],
-  "updated_at": "2026-06-12T11:09:15.320324+03:00"
+  "updated_at": "2026-06-18T20:40:31.683718+03:00"
 }

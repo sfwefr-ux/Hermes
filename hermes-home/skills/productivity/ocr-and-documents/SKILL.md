@@ -209,3 +209,17 @@ No extra dependencies needed — pymupdf covers split, merge, search, and text e
 - marker-pdf downloads ~2.5GB of models to `~/.cache/huggingface/` on first use
 - For Word docs: `pip install python-docx` (better than OCR — parses actual structure)
 - For PowerPoint: see the `powerpoint` skill (uses python-pptx)
+
+## Editing PDFs (nano-pdf)
+
+For quick text edits (typos, titles, dates) use [nano-pdf](https://pypi.org/project/nano-pdf/):
+
+```bash
+uv pip install nano-pdf
+nano-pdf edit file.pdf <page> "Change the title to 'Q3 Results'"
+nano-pdf edit report.pdf 3 "Update the date to February 2026"
+```
+
+- Page numbers may be 0-based or 1-based — retry ±1 if targeting wrong page
+- Uses an LLM under the hood — needs an API key (check `nano-pdf --help`)
+- Works well for text changes; complex layout modifications need a different approach
