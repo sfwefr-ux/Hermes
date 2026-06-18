@@ -548,15 +548,14 @@ mcp_servers:
     - firecrawl-mcp
     env:
       FIRECRAWL_API_KEY: ${FIRECRAWL_API_KEY}
-  # YouGile MCP — отключён до появления проекта. Чтобы включить:
-  # 1) впиши YOUGILE_API_KEY в .env  2) раскомментируй блок ниже  3) перезапусти gateway
-  # yougile:
-  #   type: stdio
-  #   command: node
-  #   args:
-  #   - C:/Users/1/AppData/Local/hermes/mcp-servers/yougile-mcp/yougile.cjs
-  #   env:
-  #     YOUGILE_API_KEY: ${YOUGILE_API_KEY}
+  vercel:
+    type: stdio
+    command: npx
+    args:
+    - -y
+    - '@robinson_ai_systems/vercel-mcp'
+    env:
+      VERCEL_TOKEN: ${VERCEL_TOKEN}
 video_gen:
   provider: fal
   fal:
@@ -573,6 +572,7 @@ platform_toolsets:
   - image_gen
   - video_gen
   - kanban
+  - mcpmarket_notion
   - memory
   - messaging
   - session_search
@@ -580,6 +580,7 @@ platform_toolsets:
   - terminal
   - todo
   - tts
+  - vercel
   - vision
   - web
 known_plugin_toolsets:

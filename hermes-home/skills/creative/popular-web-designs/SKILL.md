@@ -173,7 +173,7 @@ those carry more visual identity than the specific font face.
 | `framer.md` | Framer | Bold black and blue, motion-first, design-forward |
 | `intercom.md` | Intercom | Friendly blue palette, conversational UI patterns |
 | `miro.md` | Miro | Bright yellow accent, infinite canvas aesthetic |
-| `notion.md` | Notion | Warm minimalism, serif headings, soft surfaces |
+| `notion-design.md` | Notion | Warm minimalism, serif headings, soft surfaces |
 | `pinterest.md` | Pinterest | Red accent, masonry grid, image-first layout |
 | `webflow.md` | Webflow | Blue-accented, polished marketing site aesthetic |
 
