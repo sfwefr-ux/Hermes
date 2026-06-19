@@ -332,6 +332,7 @@ See [`references/vercel-mcp.md`](references/vercel-mcp.md) for full Vercel MCP d
 - **Notion MCP**: full verification results, tool list, and Cyrillic comparison with Miro in [`references/notion-mcp-verification.md`](references/notion-mcp-verification.md).
 - **mcpc (Apify MCP CLI)**: OAuth flow, PKCE pitfalls, Windows cmd.exe issues, and connection commands in [`references/mcpc-apify-cli.md`](references/mcpc-apify-cli.md).
 - **Context7**: stdio setup via npx, API key format, verification in [`references/context7-mcp.md`](references/context7-mcp.md).
+- **Vercel MCP**: official vs community options in [`references/vercel-mcp.md`](references/vercel-mcp.md).
 
 ## Usage Skills (per-service)
 

@@ -126,7 +126,7 @@ those carry more visual identity than the specific font face.
 | `mistral.ai.md` | Mistral AI | French-engineered minimalism, purple-toned |
 | `ollama.md` | Ollama | Terminal-first, monochrome simplicity |
 | `opencode.ai.md` | OpenCode AI | Developer-centric dark theme, full monospace |
-| `replicate.md` | Replicate | Clean white canvas, code-forward |
+| `replicate.com.md` | Replicate | Clean white canvas, code-forward |
 | `runwayml.md` | RunwayML | Cinematic dark UI, media-rich layout |
 | `together.ai.md` | Together AI | Technical, blueprint-style design |
 | `voltagent.md` | VoltAgent | Void-black canvas, emerald accent, terminal-native |
